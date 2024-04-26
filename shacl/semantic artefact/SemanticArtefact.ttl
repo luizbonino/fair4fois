@@ -1,15 +1,15 @@
+@prefix : <http://fairdatapoint.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
 @prefix mod: <https://w3id.org/mod#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix sema: <http://www.w3.org/ns/sema#> .
 @prefix dash: <http://datashapes.org/dash#> .
+@prefix ocmv: <https://w3id.org/ontouml-models/vocabulary#> .
 
-mod:SemanticArtefact
-  a rdfs:Class, sh:NodeShape ;
+:SemanticArtefactShape a sh:NodeShape ;
+  sh:targetClass mod:SemanticArtefact ;
   sh:property
     [
       sh:name "Name" ;
@@ -60,7 +60,7 @@ mod:SemanticArtefact
       sh:nodeKind sh:IRI ;
       dash:editor dash:URIEditor ;
       dash:viewer dash:LabelViewer ;
-    ],
+  ],
 
 	[
       sh:name "License" ;
@@ -164,7 +164,7 @@ mod:SemanticArtefact
     ],
 
     [
-      sh:name " Development Context" ;
+      sh:name "Development Context" ;
       sh:description "The list of contexts in which the semantic artefact was developed. The allowed values for this field are: \"research\", \"industry\", \"classroom\"." ;
       sh:path ocmv:context ;
       sh:maxCount 3 ;
@@ -197,5 +197,4 @@ mod:SemanticArtefact
     dash:editor dash:EnumSelectEditor ;
     dash:viewer dash:LabelViewer ;
   ]
-;
 .
