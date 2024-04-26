@@ -101,7 +101,7 @@ mod:SemanticArtefact
 
 	[
       sh:name "Keyword" ;
-      sh:description "A list of strings that identify the domains covered by the model." ;
+      sh:description "A list of strings that identify the domains covered by the semantic artefact." ;
       sh:path dcat:keyword ;
       sh:minCount 1 ;
       sh:or (
@@ -114,7 +114,7 @@ mod:SemanticArtefact
 
 	[
       sh:name "Acronym" ;
-      sh:description "The acronym one can use to refer to the model. E.g., \"GORO\", \"COVER\", \"OOC-O\"." ;
+      sh:description "The acronym one can use to refer to the semantic artefact. E.g., \"GORO\", \"COVER\", \"OOC-O\"." ;
       sh:path mod:acronym ;
       sh:datatype xsd:string ;
       dash:editor dash:TextFieldEditor ;
@@ -123,12 +123,12 @@ mod:SemanticArtefact
 
 	[
       sh:name "Language" ;
-      sh:description "The language in which the names of the elements in the model are written. Use a literal value consisting of a language tag as defined by the IETF Best Current Practice 47, such as \"en\" and \"pt\". See \"https://tools.ietf.org/html/bcp47\"" ;
+      sh:description "The language in which the names of the elements in the semantic artefact are written. Use a literal value consisting of a language tag as defined by the IETF Best Current Practice 47, such as \"en\" and \"pt\". See \"https://tools.ietf.org/html/bcp47\"" ;
       sh:path dct:language ;
       sh:datatype xsd:string ;
       dash:editor dash:TextFieldEditor ;
       dash:viewer dash:LiteralViewer ;
-    ],
+  ],
 
 	[
       sh:name "Artefact Type" ;
