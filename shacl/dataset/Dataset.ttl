@@ -1,3 +1,4 @@
+@prefix : <http://fairdatapoint.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -7,9 +8,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix freq: <http://purl.org/cld/terms/Frequency/>.
 
-
-dcat:Dataset
-  a rdfs:Class, sh:NodeShape ;
+:DatasetShape a sh:NodeShape ;
+  sh:targetClass dcat:Dataset ;
   sh:property
     [
       sh:name "Dataset Name" ;
@@ -177,6 +177,5 @@ dcat:Dataset
       sh:datatype xsd:string ;
       dash:editor dash:TextFieldEditor ;
       dash:viewer dash:LiteralViewer ;
-    ],
-;
+    ]
 .

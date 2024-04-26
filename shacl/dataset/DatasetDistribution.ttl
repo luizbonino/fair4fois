@@ -1,3 +1,4 @@
+@prefix : <http://fairdatapoint.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -7,9 +8,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 
-
-mod:SemanticArtefactDistribution
-  a rdfs:Class, sh:NodeShape ;
+:DatasetDistributionShape a sh:NodeShape ;
+  sh:targetClass dcat:Distribution ;
   sh:property
     [
       sh:name "Distribution Title" ;
@@ -105,5 +105,4 @@ mod:SemanticArtefactDistribution
       dash:editor dash:URIEditor ;
       dash:viewer dash:LabelViewer ;
     ]
-;
 .
