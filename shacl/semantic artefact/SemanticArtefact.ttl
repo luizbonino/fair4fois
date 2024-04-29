@@ -4,27 +4,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix sema: <http://www.w3.org/ns/sema#> .
+@prefix sema: <http://www.w3.org/fairforfois/sema#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix ocmv: <https://w3id.org/ontouml-models/vocabulary#> .
 
 :SemanticArtefactShape a sh:NodeShape ;
   sh:targetClass mod:SemanticArtefact ;
   sh:property
-    [
-      sh:name "Name" ;
-      sh:description "The name of the semantic artefact" ;
-      sh:path dct:title ;
-      sh:minCount 1 ;
-      sh:or (
-      	[ sh:datatype xsd:string ; ]
-      	[ sh:datatype rdf:langString ; ]
-      ) ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-
-
     [
       sh:name "Alternative Name" ;
       sh:description "The alternative name of the semantic artefact" ;
@@ -36,99 +22,6 @@
       dash:editor dash:TextFieldEditor ;
       dash:viewer dash:LiteralViewer ;
     ],
-
-    [
-      sh:name "Description" ;
-      sh:description "Short description of the semantic artefact" ;
-      sh:path dct:description ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:or (
-      	[ sh:datatype xsd:string ; ]
-      	[ sh:datatype rdf:langString ; ]
-      ) ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ], 
-
-
-	[
-      sh:name "Contributors" ;
-      sh:description "Identifies a foaf:Agent who contributed to the development of the semantic artefact. When available, we recommend using a contributor's identifier from DBLP (e.g., \"https://dblp.org/pid/96/8280\") or ORCID (e.g., \"https://orcid.org/0000-0003-2736-7817\").";      
-      sh:path dct:contributor ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-      dash:editor dash:URIEditor ;
-      dash:viewer dash:LabelViewer ;
-  ],
-
-	[
-      sh:name "License" ;
-      sh:description "Identifies a legal document under which the semantic artefact is made available. E.g., \"https://creativecommons.org/licenses/by/4.0/\"." ;
-      sh:path dct:license ;
-      sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      dash:editor dash:URIEditor ;
-      dash:viewer dash:URIViewer ;
-    ],
-
-	[
-      sh:name "Issued" ;
-      sh:description "Date of formal issuance of the semantic artefact" ;
-      sh:path dct:issued ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:or (
-        [ sh:datatype xsd:dateTime ; ]
-        [ sh:datatype xsd:date ; ]
-        [ sh:datatype xsd:gYearMonth ; ]
-        [ sh:datatype xsd:gYear ; ]
-        ) ;
-      dash:editor dash:DatePickerEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-
-    [
-      sh:name "Landing Page" ;
-      sh:description "A Web page that can be navigated to in a Web browser to gain access to additional information about the semantic artefact. It must start with \"http://\" or \"https://\"." ;
-      sh:path dcat:landingPage ;
-      sh:nodeKind sh:IRI ;
-      sh:pattern "^https?://" ;
-      dash:editor dash:URIEditor ;
-      dash:viewer dash:URIViewer ;
-    ],
-
-	[
-      sh:name "Keyword" ;
-      sh:description "A list of strings that identify the domains covered by the semantic artefact." ;
-      sh:path dcat:keyword ;
-      sh:minCount 1 ;
-      sh:or (
-        [ sh:datatype xsd:string ; ]
-        [ sh:datatype rdf:langString ; ]
-      ) ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-
-	[
-      sh:name "Acronym" ;
-      sh:description "The acronym one can use to refer to the semantic artefact. E.g., \"GORO\", \"COVER\", \"OOC-O\"." ;
-      sh:path mod:acronym ;
-      sh:datatype xsd:string ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-
-	[
-      sh:name "Language" ;
-      sh:description "The language in which the names of the elements in the semantic artefact are written. Use a literal value consisting of a language tag as defined by the IETF Best Current Practice 47, such as \"en\" and \"pt\". See \"https://tools.ietf.org/html/bcp47\"" ;
-      sh:path dct:language ;
-      sh:datatype xsd:string ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-  ],
 
 	[
       sh:name "Artefact Type" ;

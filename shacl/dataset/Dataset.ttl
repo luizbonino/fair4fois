@@ -12,33 +12,6 @@
   sh:targetClass dcat:Dataset ;
   sh:property
     [
-      sh:name "Dataset Name" ;
-      sh:description "The name of the dataset" ;
-      sh:path dct:title ;
-      sh:minCount 1 ;
-      sh:or (
-      	[ sh:datatype xsd:string ; ]
-      	[ sh:datatype rdf:langString ; ]
-      ) ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-    
-    [
-      sh:name "Description" ;
-      sh:description "Short description of the dataset" ;
-      sh:path dct:description ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:or (
-      	[ sh:datatype xsd:string ; ]
-      	[ sh:datatype rdf:langString ; ]
-      ) ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ], 
-    
-    [
       sh:name "Contributors" ;
       sh:description "Identifies a foaf:Agent who contributed to the development of the dataset. When available, we recommend using a contributor's identifier from DBLP (e.g., \"https://dblp.org/pid/96/8280\") or ORCID (e.g., \"https://orcid.org/0000-0003-2736-7817\").";      
       sh:path dct:contributor ;
@@ -48,36 +21,9 @@
       dash:viewer dash:LabelViewer ;
     ],
 
-	  [
-      sh:name "License" ;
-      sh:description "Identifies a legal document under which the dataset is made available. E.g., \"https://creativecommons.org/licenses/by/4.0/\"." ;
-      sh:path dct:license ;
-      sh:nodeKind sh:IRI ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      dash:editor dash:URIEditor ;
-      dash:viewer dash:URIViewer ;
-    ],
-
-	  [
-      sh:name "Issued" ;
-      sh:description "Date of formal issuance of the dataset" ;
-      sh:path dct:issued ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-      sh:or (
-        [ sh:datatype xsd:dateTime ; ]
-        [ sh:datatype xsd:date ; ]
-        [ sh:datatype xsd:gYearMonth ; ]
-        [ sh:datatype xsd:gYear ; ]
-        ) ;
-      dash:editor dash:DatePickerEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-
     [
       sh:name "Landing Page" ;
-      sh:description "A Web page that can be navigated to in a Web browser to gain access to additional information about the dataset. It must start with \"http://\" or \"https://\"." ;
+      sh:description "A Web page that can be navigated to in a Web browser to gain access to additional information about the resource. It must start with \"http://\" or \"https://\"." ;
       sh:path dcat:landingPage ;
       sh:nodeKind sh:IRI ;
       sh:pattern "^https?://" ;
@@ -87,8 +33,9 @@
 
 	  [
       sh:name "Keyword" ;
-      sh:description "A list of strings that identify the domains covered by the dataset." ;
+      sh:description "A list of strings that identify the domains covered by the resource." ;
       sh:path dcat:keyword ;
+      sh:nodeKind sh:Literal ;
       sh:minCount 1 ;
       sh:or (
         [ sh:datatype xsd:string ; ]
@@ -102,25 +49,6 @@
       sh:name "Acronym" ;
       sh:description "The acronym one can use to refer to the dataset. E.g., \"GORO\", \"COVER\", \"OOC-O\"." ;
       sh:path mod:acronym ;
-      sh:datatype xsd:string ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-
-	  [
-      sh:name "Language" ;
-      sh:description "The language in which data in the dataset is recorded. Use a literal value consisting of a language tag as defined by the IETF Best Current Practice 47, such as \"en\" and \"pt\". See \"https://tools.ietf.org/html/bcp47\"" ;
-      sh:path dct:language ;
-      sh:datatype xsd:string ;
-      dash:editor dash:TextFieldEditor ;
-      dash:viewer dash:LiteralViewer ;
-    ],
-
-    [
-      sh:name "Version" ;
-      sh:description "Version number of the dataset distribution" ;
-      sh:path dct:hasVersion ;
-      sh:maxCount 1 ;
       sh:datatype xsd:string ;
       dash:editor dash:TextFieldEditor ;
       dash:viewer dash:LiteralViewer ;
